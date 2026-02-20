@@ -2,6 +2,7 @@
   const holes = document.querySelectorAll('.hole');
   const scoreBoard = document.querySelector('.score');
   const moles = document.querySelectorAll('.mole');
+  const message = document.querySelector('.message');
   let lastHole;
   let timeUp = false;
   let score = 0;
@@ -23,7 +24,7 @@
   }
 
   function peep(){
-    const time = randomTime(2000,1000)
+    const time = randomTime(500,1000)
     const hole = randomHole(holes);
     hole.classList.add('up')
     setTimeout(() => {
@@ -35,11 +36,20 @@
 
   function startGame(){
     scoreBoard.textContent = 0;
+    message.textContent = "";
     timeUp = false;
     score = 0;
     peep()
+
     setTimeout(() =>{
       timeUp = true
+      message.textContent = `Game Over! Your score is ${score}. Click Start to play again.`;
+
+      confetti({
+      particleCount: 150,
+      spread: 100,
+      origin: { y: 0.6 }
+    });
     }, 10000)
   }
 

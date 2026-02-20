@@ -67,3 +67,20 @@ h1 {
 .hole.up .mole {
   top: 0;
 }
+
+.message {
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 20px;
+  color: #333;
+}
+
+.start{
+  display:block;
+  margin:20px auto;
+  width:60px;
+  height:40px;
+  border-radius: 10%;
+  background-color: rgb(86, 193, 80);
+  cursor:pointer;
+}
